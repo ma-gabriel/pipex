@@ -6,7 +6,7 @@
 #    By: geymat <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 04:17:20 by geymat            #+#    #+#              #
-#    Updated: 2024/02/22 18:10:21 by geymat           ###   ########.fr        #
+#    Updated: 2024/03/01 22:38:35 by geymat           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ $(NAME): $(OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS)
+	$(RM) $(OBJECTS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)

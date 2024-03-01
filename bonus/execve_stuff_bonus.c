@@ -6,7 +6,7 @@
 /*   By: geymat <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:54:44 by geymat            #+#    #+#             */
-/*   Updated: 2024/02/29 01:14:26 by geymat           ###   ########.fr       */
+/*   Updated: 2024/03/01 22:32:51 by geymat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ void	loops_executions(char **argv, char *envp[], int bonus)
 		fd_merged[2] = fd_new[0];
 		if (the_execve_stuff(argv, envp, fd_merged, i))
 		{
-			if (fd_new[0] != -1)
-				close(fd_new[0]);
-			exit(close_3_free(fd_old[0], fd_old[1], fd_new[1], NULL));
+			close_3_free(fd_old[0], fd_old[1], -1, NULL);
+			close_3_free(fd_new[0], fd_new[1], -1, NULL);
+			return ;
 		}
 		close_3_free(fd_old[0], fd_old[1], fd_new[1], NULL);
 		fd_old[0] = fd_new[0];
